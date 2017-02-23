@@ -3,16 +3,24 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: The constraint propagation technique applies as we repeat the method until the solution is found (or not). 
+A: Naked Twins are pairs of candidates in two cells belonging at least to one unit
+(row,column or block). Each of the pairs candidate can ony exist in the one or the other cell. 
+Consequently those candidates can be removed from all other cells in this unit. 
+The constraint propagation technique applies as we repeat the method until the solution is found (or not). 
 Like in the Elimination method or in the "Only Choice" method, in the "Naked Twins" method we can aplly the 
 constraint propagation until find a solution or a better position to achive the solution. Then we can aplly
-other methods.
+other methods until a solutions is found. 
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: To incorporate constraint propagation in the diagonal solution, the best way is to create a unit, 
-with the individual elements of the diagonal. This new unit will intruduce a new constraint in the system, 
-who will be resolved only when only all the others constraint are eliminated.
+A: The Diagonal Sudoku has an additional constraint compared to other methods. Additionally to the row, column 
+and block constraint, we have also the 2 diagonal lines constraints. 
+To incorporate constraint propagation in the diagonal solution, the best way is to create two new units, 
+with the individual elements of the two diagonals. This new units will introduce new constraints in the system, 
+who will be resolved normally with elimination, only choice or search methods.
+This will result in not accepting solutions that do not satisfy the diagonal constraint. When all the 
+constraint disappear the problem is resolved.  
+
 
 ### Install
 
